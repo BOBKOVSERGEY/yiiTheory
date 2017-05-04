@@ -11,7 +11,7 @@ class MyController extends Controller
     {
         $hi = 'Hello, World!';
         $names = ['Ivanov', 'Petrov', 'Sidorov'];
-        return $this->render('index', ['hello' => $hi, 'names' => $names]);
-        //return 'Action Index';
+       // return $this->render('index', ['hello' => $hi, 'names' => $names]);
+        return $this->render('index', compact('hi', 'names'));
     }
 }

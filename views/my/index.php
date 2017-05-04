@@ -1,5 +1,5 @@
 <h1>Action Index</h1>
-<?php echo $hello; ?>
-<?php
-echo '<pre>';
-print_r($names);
+<?php echo $hi; ?>
+<?php foreach ($names as $name) : ?>
+<?php echo '<br>' . $name;?>
+<?php endforeach; ?>
