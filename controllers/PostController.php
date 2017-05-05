@@ -5,7 +5,7 @@ namespace app\controllers;
 
 class PostController extends AppController
 {
-    //public $layout = 'basic';
+    public $layout = 'basic';
     public function actionIndex()
     {
         return $this->render('test');
@@ -13,7 +13,7 @@ class PostController extends AppController
 
     public function actionShow()
     {
-        $this->layout = 'basic';
+        //$this->layout = 'basic';
         return $this->render('show');
     }
 }
