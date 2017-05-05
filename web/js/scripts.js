@@ -1,1 +1,4 @@
-document.write('Hello');
+$(function () {
+    var message = 'Wuff';
+    $('.container').append(message);
+});
