@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 
+use app\models\TestForm;
+
 class PostController extends AppController
 {
     public $layout = 'basic';
@@ -13,7 +15,12 @@ class PostController extends AppController
             $this->debug($_POST);
             return 'test';
         }
-        return $this->render('test');
+
+        $model = new TestForm();
+
+        $this->view->title = 'Все статьи';
+
+        return $this->render('test', compact('model'));
     }
 
     public function actionShow()
