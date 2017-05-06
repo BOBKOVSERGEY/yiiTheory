@@ -29,11 +29,13 @@ AppAsset::register($this);
                 <li role="presentation">
                     <?php echo Html::a('Статьи', ['post/index']); ?>
                 </li>
-                <li role="presentation">
+                <li role="presentati(isset($this->blocks['block1']))on">
                     <?php echo Html::a('Статья', ['post/show']); ?>
                 </li>
             </ul>
-
+            <?php if (isset($this->blocks['block1'])) : ?>
+                <?php echo $this->blocks['block1'];?>
+            <?php endif;?>
             <?php echo $content; ?>
         </div>
     </div>
