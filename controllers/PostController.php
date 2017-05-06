@@ -20,6 +20,8 @@ class PostController extends AppController
     {
         //$this->layout = 'basic';
         $this->view->title = 'Одна статья!'; // вывод тайтла
+        $this->view->registerMetaTag(['name' => 'keywords', 'content' => 'Ключевые слова']);
+        $this->view->registerMetaTag(['name' => 'description', 'content' => 'Описание страницы']);
         return $this->render('show');
     }
 }
