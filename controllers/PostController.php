@@ -42,10 +42,13 @@ class PostController extends AppController
         $this->view->registerMetaTag(['name' => 'keywords', 'content' => 'Ключевые слова']);
         $this->view->registerMetaTag(['name' => 'description', 'content' => 'Описание страницы']);
 
+        //$cats = Category::find()->orderBy(['id' => SORT_DESC])->all();
+        //$cats = Category::find()->all();
         //$cats = Category::find()->asArray()->where('parent = 691')->all();
         //$cats = Category::find()->asArray()->where(['parent' => 691])->all();
         //$cats = Category::find()->asArray()->where(['like', 'title', 'pp'])->all();
-        $cats = Category::find()->asArray()->where(['<=', 'id', 695])->all();
+        //$cats = Category::find()->asArray()->where(['<=', 'id', 695])->all();
+        $cats = Category::find()->asArray()->where(['parent' => 691])->limit(1)->all();
 
 
         return $this->render('show', compact('cats'));
