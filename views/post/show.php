@@ -9,8 +9,20 @@
 <h1>Show action</h1>
 <?php foreach ($cats as $cat): ?>
     <h2><?php echo $cat->title;?></h2>
+    <?php
+    $products = $cat->products;
+    foreach ($products as $product) {
+        echo '<ul>';
+            echo '<li>' . $product->title . '</li>';
+        echo '</ul>';
+    }
+    ;?>
 <?php endforeach; ?>
 <?php debug($cats); ?>
+
+<?php //echo count($cats->products); ?>
+
+<?php //debug($cats); ?>
 
 <button class="btn btn-success" id="btn">Click me...</button>
 
