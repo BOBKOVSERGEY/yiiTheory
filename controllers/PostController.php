@@ -48,7 +48,8 @@ class PostController extends AppController
         //$cats = Category::find()->asArray()->where(['parent' => 691])->all();
         //$cats = Category::find()->asArray()->where(['like', 'title', 'pp'])->all();
         //$cats = Category::find()->asArray()->where(['<=', 'id', 695])->all();
-        $cats = Category::find()->asArray()->where(['parent' => 691])->limit(1)->all();
+        //$cats = Category::find()->asArray()->where(['parent' => 691])->limit(2)->all();
+        $cats = Category::find()->asArray()->where(['parent' => 691])->one();
 
 
         return $this->render('show', compact('cats'));
