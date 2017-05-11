@@ -7,8 +7,10 @@
 <?php $this->endBlock(); ?>
 
 <h1>Show action</h1>
-
-<? debug($cats); ?>
+<?php foreach ($cats as $cat): ?>
+    <h2><?php echo $cat->title;?></h2>
+<?php endforeach; ?>
+<?php debug($cats); ?>
 
 <button class="btn btn-success" id="btn">Click me...</button>
 
