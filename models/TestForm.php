@@ -1,19 +1,22 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Andrey
+ * Date: 26.03.2016
+ * Time: 9:32
+ */
 
 namespace app\models;
+use yii\db\ActiveRecord;
 
 
-use yii\base\Model;
+class TestForm extends ActiveRecord{
 
-class TestForm extends Model
-{
+    public static function tableName(){
+        return 'posts';
+    }
 
-    public $name;
-    public $email;
-    public $text;
-
-    public function attributeLabels()
-    {
+    public function attributeLabels(){
         return [
             'name' => 'Имя',
             'email' => 'E-mail',
@@ -21,17 +24,10 @@ class TestForm extends Model
         ];
     }
 
-    public function rules()
-    {
+    public function rules(){
         return [
-            //[ ['name, email'], 'required',  ],
-            [ 'email', 'required', 'message' => 'Поле обязательно' ],
-            [ 'email', 'email' ],
-            //[ 'name', 'string', 'min' => 2, 'tooShort' => 'Мало' ],
-            //[ 'name', 'string', 'max' => 5, 'tooLong' => 'Много' ],
-            [ 'name', 'string', 'length' => [2,5] ],
-            //[ 'name', 'myRule'],
-            [ 'text', 'trim' ]
+            [ ['name', 'text'], 'required' ],
+            ['email', 'trim']
         ];
     }
 

@@ -18,12 +18,18 @@ class PostController extends AppController
             $this->debug($_POST);
             return 'test';
         }
+        $post = TestForm::findOne(3);
+        $post->email = 'example@example.com';
+        $post->save();
 
         $model = new TestForm();
+        //$model->name = 'Автор';
+        //$model->email = '111';
+        //$model->text = 'Текст сообщения';
+        //$model->save();
+
         if ($model->load(Yii::$app->request->post())) {
-
-
-            if ($model->validate()) {
+            if ($model->save()) {
                 Yii::$app->session->setFlash('success', 'Данные приняты');
             } else {
                 Yii::$app->session->setFlash('error', 'Ошибка');
