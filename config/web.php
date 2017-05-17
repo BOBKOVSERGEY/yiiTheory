@@ -45,6 +45,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'enableStrictParsing' => false,
+            'suffix' => '/',
             'rules' => [
                 '<action:(about|contact|login)>' => 'site/<action>',
                 //'<action:\w+>' => 'site/<action>',
