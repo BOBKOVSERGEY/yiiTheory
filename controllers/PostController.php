@@ -18,12 +18,12 @@ class PostController extends AppController
             $this->debug($_POST);
             return 'test';
         }
-        $post = TestForm::findOne(2);
+        //$post = TestForm::findOne(2);
         //$this->debug($post);
         //$post->email = 'example@example.com';
         //$post->save();
-        $post->delete();
-
+        //$post->delete();
+        TestForm::deleteAll(['>', 'id', 3]);
         $model = new TestForm();
         //$model->name = 'Автор';
         //$model->email = '111';

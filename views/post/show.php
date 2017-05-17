@@ -1,5 +1,6 @@
 <?php
     //$this->title = 'Одна статья';
+    use app\components\MyWidget;
 ?>
 
 <?php $this->beginBlock('block1'); ?>
@@ -7,6 +8,12 @@
 <?php $this->endBlock(); ?>
 
 <h1>Show action</h1>
+<?php //echo MyWidget::widget(); ?>
+
+<?php MyWidget::begin(); ?>
+    <h1>привет, мир</h1>
+<?php MyWidget::end(); ?>
+
 <?php foreach ($cats as $cat): ?>
     <h2><?php echo $cat->title;?></h2>
     <?php
