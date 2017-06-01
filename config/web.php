@@ -47,6 +47,11 @@ $config = [
             'enableStrictParsing' => false,
             'suffix' => '/',
             'rules' => [
+                [
+                    'pattern' => '',
+                    'route' => 'site/index',
+                    'suffix' => ''
+                ],
                 '<action:(about|contact|login)>' => 'site/<action>',
                 //'<action:\w+>' => 'site/<action>',
             ],
